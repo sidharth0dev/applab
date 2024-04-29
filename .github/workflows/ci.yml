@@ -16,10 +16,6 @@ jobs:
         with:
           python-version: '3.x'  # Update with your desired Python version
 
-      - name: Check Network Connectivity (Optional)
-        # Add this step if you suspect network issues
-        run: ping 8.8.8.8 || true  # Silences non-zero exit code
-
       - name: Install dependencies (linter)
         # Specify PyPI URL (optional)
         run: pip install --index-url https://pypi.org stylelint
