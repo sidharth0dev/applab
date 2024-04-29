@@ -2,11 +2,11 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]  # Change branch name if needed
+    branches: [ main ]  
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Adjust OS if preferred
+    runs-on: ubuntu-latest  
 
     steps:
       - uses: actions/checkout@v2
@@ -14,15 +14,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'  # Update with your desired Python version
-
-      - name: Install dependencies (linter)
-        # Specify PyPI URL (optional)
-        run: pip install --index-url https://pypi.org stylelint
-
-      - name: Configure Stylelint (Optional)
-        # Add this step if you have a custom stylelint configuration file
-        run: cp .stylelintrc ./  # Replace with your copy command
+          python-version: '3.12'  
 
       - name: Run style checks
         run: stylelint --fix
